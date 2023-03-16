@@ -12,7 +12,7 @@ import pt.ipvc.parkingsolutions.presentation.signup_screen.SignUpScreen
 fun NavigationGraph(navController: NavHostController = rememberNavController()) {
     NavHost(
         navController = navController,
-        startDestination = Screens.SignUpScreen.route
+        startDestination = Screens.SignInScreen.route
     ) {
         composable(route = Screens.SignInScreen.route) {
             SignInScreen(navController)

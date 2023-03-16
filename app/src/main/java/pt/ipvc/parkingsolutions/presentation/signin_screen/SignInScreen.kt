@@ -45,12 +45,13 @@ fun SignInScreen(
             fontSize = 35.sp,
         )
         Text(
+            modifier = Modifier.padding(bottom = 5.dp),
             text = "Enter your credentials to login",
             fontWeight = FontWeight.Medium,
             fontSize = 15.sp, color = Color.Gray,
         )
         TextField(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxWidth(),
             value = email,
             onValueChange = {
                 email = it
@@ -70,7 +71,7 @@ fun SignInScreen(
         )
         Spacer(modifier = Modifier.height(16.dp))
         TextField(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxWidth(),
             value = password,
             onValueChange = {
                 password = it
@@ -95,7 +96,7 @@ fun SignInScreen(
                 }
             },
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(top = 20.dp, start = 30.dp, end = 30.dp),
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Black,
