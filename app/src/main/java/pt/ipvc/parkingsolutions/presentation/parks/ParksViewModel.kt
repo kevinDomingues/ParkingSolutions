@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
 class ParksViewModel: ViewModel(){
-    val state = mutableStateOf(Park())
+    val state = mutableStateOf(listOf<Park>())
 
     init {
         getData()
@@ -24,18 +24,18 @@ class ParksViewModel: ViewModel(){
 }
 
 
-suspend fun getParksFromFireStore():Park{
+suspend fun getParksFromFireStore():List<Park>{
     val db = FirebaseFirestore.getInstance()
-    var parks = Park()
+    val parks = mutableListOf<Park>()
 
     try {
         db.collection("park").get().await().map {
             val result = it.toObject(Park::class.java)
-            parks = result
+            parks.add(result)
         }
     } catch (e: FirebaseFirestoreException) {
         Log.d("Error", "getDataFromFireStore: $e")
     }
 
-    return parks;
+    return parks.toList()
 }
