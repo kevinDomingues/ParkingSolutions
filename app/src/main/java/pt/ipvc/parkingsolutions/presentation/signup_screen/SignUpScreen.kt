@@ -135,6 +135,7 @@ fun SignUpScreen(
             if(state.value?.isSuccess?.isNotEmpty() == true) {
                 val success = state.value?.isSuccess
                 Toast.makeText(context, "$success", Toast.LENGTH_LONG).show()
+                navController.navigate(Screens.ParksScreen.route)
             }
         }
     }

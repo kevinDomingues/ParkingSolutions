@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import pt.ipvc.parkingsolutions.presentation.parks.ParksScreen
 import pt.ipvc.parkingsolutions.presentation.signin_screen.SignInScreen
 import pt.ipvc.parkingsolutions.presentation.signup_screen.SignUpScreen
 
@@ -19,6 +20,9 @@ fun NavigationGraph(navController: NavHostController = rememberNavController()) 
         }
         composable(route = Screens.SignUpScreen.route) {
             SignUpScreen(navController)
+        }
+        composable(route = Screens.ParksScreen.route) {
+            ParksScreen()
         }
     }
 }
