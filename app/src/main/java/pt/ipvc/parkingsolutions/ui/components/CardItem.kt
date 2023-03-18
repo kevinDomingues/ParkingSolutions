@@ -1,5 +1,6 @@
 package pt.ipvc.parkingsolutions.ui.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,7 +26,8 @@ fun CardItem(name: String, location: String, nFreeSpaces: Int, image: String) {
             .height(280.dp),
         shape = RoundedCornerShape(16.dp),
         backgroundColor = Color.White,
-        elevation = 10.dp
+        elevation = 10.dp,
+        border = BorderStroke(0.5.dp,Color.DarkGray)
     ){
         Column {
             Image(
@@ -47,7 +49,7 @@ fun CardItem(name: String, location: String, nFreeSpaces: Int, image: String) {
                 Text(
                     text = location,
                     modifier = Modifier.padding(top = 8.dp),
-                    color = Color.LightGray,
+                    color = Color.Black,
                     fontSize = 13.sp,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
@@ -56,13 +58,13 @@ fun CardItem(name: String, location: String, nFreeSpaces: Int, image: String) {
                     Text(
                         text = "Free Spaces: ",
                         modifier = Modifier.padding(top = 8.dp),
-                        color = Color.LightGray,
+                        color = Color.Black,
                         fontSize = 13.sp,
                     )
                     Text(
                         text = nFreeSpaces.toString(),
                         modifier = Modifier.padding(top = 8.dp),
-                        color = Color.Black,
+                        color = Color.Green,
                         fontSize = 13.sp,
                     )
                 }
